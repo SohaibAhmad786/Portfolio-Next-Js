@@ -1,0 +1,64 @@
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import { slideInFromTop } from "@/utils/motion";
+import Image from "next/image";
+
+export const Encryption = () => {
+  return (
+    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
+      <div className="absolute h-auto w-auto top-0 z-[5]">
+        <motion.div
+          variants={slideInFromTop}
+          className="text-[40px] font-medium text-center text-gray-200"
+        >
+          Performance
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            {" "}
+            &{" "}
+          </span>
+          Security
+        </motion.div>
+      </div>
+      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[10] w-auto h-auto">
+        <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
+          <Image
+            src="/assets/LockTop.png"
+            alt="lock top"
+            height={50}
+            width={50}
+            className="w-[50px] translate-y-5 transition-all duration-200 group-hover:translate-y-11"
+          />
+          <Image
+            src="/assets/LockMain.png"
+            alt="lock Main"
+            height={70}
+            width={70}
+            className="z-10 mt-1"
+          />
+        </div>
+        <div className="Welcome-box px-[15px] py-[4px] z-[20] my-[20px] border border-[#7042f88b] opacity-[0.9]">
+          <h1 className="Welcome-text text-[12px]">Encryption</h1>
+        </div>
+      </div>
+      <div className="absolute z-[20] bottom-[10px] px-[5px]">
+        <div className="cursive text-[20px] font-medium text-center text-gray-300">
+            Secure your data with end-to-end encription
+        </div>
+      </div>
+
+      <div className="w-full flex items-start justify-center absolute">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          prefix="false"
+          className=" w-full h-auto"
+        >
+          <source src="/assets/encryption.webm" type="video/webm" />
+        </video>
+      </div>
+    </div>
+  );
+};
